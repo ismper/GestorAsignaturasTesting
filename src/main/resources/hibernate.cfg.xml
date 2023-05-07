@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/testing</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">1234</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
+        <!-- crear automaticamente las tablas. con update si no existe las crea y si existen comprueba si son iguales y si no lo modifica -->
+        <!-- crear automaticamente las tablas. con create, mira si existen, si existen las elimna y las vuelve a crear -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+        <mapping class="org.example.model.Asignatura"/>
+        <mapping class="org.example.model.Alumno"/>
+    </session-factory>
+</hibernate-configuration>
